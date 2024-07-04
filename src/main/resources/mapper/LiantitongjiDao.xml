@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.LiantitongjiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.LiantitongjiEntity" id="liantitongjiMap">
+        <result property="tongjibianhao" column="tongjibianhao"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="lianticishu" column="lianticishu"/>
+        <result property="dengjiriqi" column="dengjiriqi"/>
+        <result property="beizhu" column="beizhu"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.LiantitongjiVO" >
+		SELECT * FROM liantitongji  liantitongji         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.LiantitongjiVO" >
+		SELECT  liantitongji.* FROM liantitongji  liantitongji 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.LiantitongjiView" >
+
+		SELECT  liantitongji.* FROM liantitongji  liantitongji 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.LiantitongjiView" >
+		SELECT * FROM liantitongji  liantitongji <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
